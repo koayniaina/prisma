@@ -23,10 +23,10 @@ export default async function Home() {
   return (
     <div className="overflow-x-auto bg-base-100">
       <table className="table">
-        {/* head */}
+        
         <thead>
           <tr>
-            {/* <th>Id</th> */}
+            
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
