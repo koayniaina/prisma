@@ -32,3 +32,24 @@ export const POST = async ( Request) =>{
 }
 
 
+export async function DELETE(request) {
+    const id = request.nextUrl.searchParams.get("id");
+    if (!id) {
+        return NextResponse.json({ message: "ID is required" }, { status: 400 });
+    }
+    const contact = await prisma.contact.findUnique({
+        where: {
+            id
+        }
+    });
+    if (!contact) {
+        return NextResponse.json({ message: "Contact not found" }, { status: 404 });
+    }
+    // Delete the contact
+    await prisma.contact.delete({
+        where: {
+            id
+        }
+    });
+    return NextResponse.json({ message: "Contact deleted successfully" });
+}

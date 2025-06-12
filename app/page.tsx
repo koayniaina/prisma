@@ -1,3 +1,4 @@
+import RemoveBtn from "@/components/RemoveBtn";
 import Link from "next/link";
 import {
   Key,
@@ -19,14 +20,12 @@ async function fetchData() {
 }
 
 export default async function Home() {
-  const posts = await fetchData();
+  const contacts = await fetchData();
   return (
     <div className="overflow-x-auto bg-base-100">
       <table className="table">
-        
         <thead>
           <tr>
-            
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -35,36 +34,35 @@ export default async function Home() {
           </tr>
         </thead>
         <tbody>
-          {posts.map(
-            (post: {
-              id: Key | null | undefined;
-              name: string;
-              email: string;
-              phone: string;
-              address: string;
-            }) => (
-              <tr key={post.id}>
-                {/* <th>{post.id}</th> */}
-                <td>{post.name}</td>
-                <td>{post.email}</td>
-                <td>{post.phone}</td>
-                <td>{post.address}</td>
-                <td>
-                  <Link href={"#"} className="text-red-500 hover:underline">
-                    <span className="material-symbols-outlined">delete</span>
-                  </Link>
-                  <Link
-                    href={`/posts/${post.id}`}
-                    className="text-blue-500 hover:underline"
-                  >
-                    <span className="material-symbols-outlined">
-                      edit_square
-                    </span>
-                  </Link>
-                </td>
-              </tr>
+          {contacts
+            .filter(
+              (contact: {
+                id: Key | null | undefined;
+              }) => contact.id !== null && contact.id !== undefined
             )
-          )}
+            .map(
+              (contact: {
+                _id: any;
+                id: string | number;
+                name: string;
+                email: string;
+                phone: string;
+                address: string;
+              }) => (
+                <tr key={contact.id}>
+                  <td>{contact.name}</td>
+                  <td>{contact.email}</td>
+                  <td>{contact.phone}</td>
+                  <td>{contact.address}</td>
+                  <td>
+                    <RemoveBtn id={contact.id} />
+                    <Link href={`/editContact/${contact.id}`} className="text-blue-500 hover:underline">
+                      <span className="material-symbols-outlined">edit</span>
+                    </Link>
+                  </td>
+                </tr>
+              )
+            )}
         </tbody>
       </table>
     </div>

@@ -21,48 +21,17 @@ export const GET = async (_request: any, { params }: any) => {
   }
 };
 
-export const PATCH = async (request: { json: () => any }, { params }: any) => {
-  try {
-    const body = await request.json();
-    const { name, email, phone, address } = body;
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
     const { id } = params;
+    const { newName: name, newEmail: email, newPhone: phone, newAddress: address } = await request.json();
 
-    const updatedContact = await prisma.contact.update({
-      where: {
-        id,
-      },
-      data: {
-        name,
-        email,
-        phone,
-        address,
-      },
+    await prisma.contact.update({
+      where: { id },
+      data: { name, email, phone, address },
     });
-    if (!updatedContact) {
-      return NextResponse.json(
-        { message: "Contact not found" },
-        { status: 404 }
-      );
-    }
-    return NextResponse.json(updatedContact);
-  } catch (error) {
-    return NextResponse.json({ message: "Update Error" }, { status: 500 });
-  }
-};
-
-
-export const DELETE = async (_request: any , {params}: any) =>{
-    try{
-
-        const { id } = params;  
-        await prisma.contact.delete({
-            where: {
-                id
-            }
-        });
-        return NextResponse.json({ message: "Contact deleted successfully" });
-    } catch (error) {
-        return NextResponse.json({ message: "DELETE Server Error" }, { status: 500 });
-    }
+    return NextResponse.json({ message: "Contact updated" }, { status: 200 });
 }
 
