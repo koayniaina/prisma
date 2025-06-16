@@ -7,13 +7,14 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
+import toast , { Toaster }  from "react-hot-toast";
 
 async function fetchData() {
   const response = await fetch("http://localhost:3000/api/contacts/", {
     cache: "no-store",
   });
   if (!response.ok) {
-    throw new Error("Network response was not ok");
+     toast.error(`Failed to fetch contacts: ${response.statusText}`);
   }
   const data = await response.json();
   return data;
@@ -23,6 +24,7 @@ export default async function Home() {
   const contacts = await fetchData();
   return (
     <div className="overflow-x-auto bg-base-100">
+      <Toaster position="top-right" />
       <table className="table">
         <thead>
           <tr>

@@ -7,3 +7,4 @@ export default function Navbar() {
     </div>
   )
 }
+// DATABASE_URL="mongodb+srv://mydb:JP7KunTKJ80SJc5O@cluster0.qwbtgjq.mongodb.net/mycrud?retryWrites=true&w=majority&appName=Cluster0"

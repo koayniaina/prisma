@@ -1,6 +1,7 @@
 "use client";
  
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
  
 interface RemoveBtnProps {
     id: string | number;
@@ -20,7 +21,7 @@ export default function RemoveBtn({ id }: RemoveBtnProps) {
                 router.refresh();
             }
         } catch (error) {
-            console.error("Error deleting contact:", error);
+           toast.error('Error deleting contact: ' + error);
         }
     };
 
