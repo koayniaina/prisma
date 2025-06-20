@@ -1,4 +1,4 @@
-import ListeStudent from "@/components/ListeStudent";
+import Navbar from "@/components/Navbar";
 import React from 'react'
 
 export default function CrudLayout({
@@ -7,9 +7,9 @@ export default function CrudLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div> 
-       <ListeStudent/>
-        {children}
-    </div>
+    <div>
+      <Navbar/>  
+      {children}
+     </div>
   )
 }

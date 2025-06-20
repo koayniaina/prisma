@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Montserrat} from "next/font/google";
 
-
-const montserrat  = {
+const montserrat  = Montserrat({
   subsets: ['latin'],
-  weight: ['400' , '800']
-}
+  weight: ['400' , '500' , '600' , '700' , '800' , '900']
+})   
 
 export const metadata: Metadata = {
   title: "Prisma Mongoose",
@@ -18,6 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
       <head>
         <link
@@ -30,7 +31,7 @@ export default function RootLayout({
           type="text/css"
         />
       </head>
-      <body>
+      <body  className={montserrat.className}>
         {children}
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
       </body>
