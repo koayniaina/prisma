@@ -1,5 +1,7 @@
 // 'use client';
+
 import EditForms from "@/components/EditForms";
+
 
 const getContactById = async (id: string) => {
   try {

@@ -25,26 +25,12 @@ export default function EditForms({
 
   const router = useRouter();
 
-//   interface UpdateContactBody {
-//     newName: string;
-//     newPhone: string;
-//     newAddress: string;
-//     newEmail: string;
-//   }
-
-//   interface HandleSubmitEvent extends React.FormEvent<HTMLFormElement> {}
-
   
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     try {
-    //   const body: UpdateContactBody = {
-    //     newName,
-    //     newPhone,
-    //     newAddress,
-    //     newEmail,
-    //   };
+  
       const res = await fetch(
         `http://localhost:3000/api/contacts/${id}`,
         {
@@ -66,7 +52,7 @@ export default function EditForms({
       }
 
       router.refresh();
-      router.push('/');
+      router.push('/Crud');
     } catch (error) {
       console.log(error);
     }
