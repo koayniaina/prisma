@@ -1,15 +1,15 @@
-import Navbar from "@/components/Navbar";
+import ListeStudent from "@/components/ListeStudent";
 import React from 'react'
 
 export default function CrudLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)  {
   return (
     <div>
-      <Navbar/>  
+      <ListeStudent/>
       {children}
-     </div>
+    </div>
   )
 }

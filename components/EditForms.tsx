@@ -52,7 +52,7 @@ export default function EditForms({
       }
 
       router.refresh();
-      router.push('/Crud');
+      router.push('/crud');
     } catch (error) {
       console.log(error);
     }

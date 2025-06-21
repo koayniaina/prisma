@@ -21,7 +21,7 @@ export default async function Home() {
   const contacts = await fetchData();
   return (
     <div className="overflow-x-auto bg-base-100">
-      <Link href="/Crud/addContact">Add Student</Link>
+      <Link href="/crud/addContact">Add Student</Link>
       <Toaster position="top-right" />
       <table className="table">
         <thead>

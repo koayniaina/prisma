@@ -20,7 +20,7 @@ export default function AddForm() {
         body: JSON.stringify({ name, email, phone, address }),
       });
       if (res.ok) {
-        router.push("/Crud");
+        router.push("/crud");
       } else {
         throw new Error("Faild to create contact");
       }
