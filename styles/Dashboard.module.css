@@ -1,0 +1,27 @@
+.content {
+  position: absolute;
+  left: 3.6rem;
+  width: calc(100% - 3.6rem);
+  min-height: 100vh;
+}
+
+.logo span{
+  width: 100%;
+  padding: .5rem .8rem;
+  font-size: 2rem;
+  color: orangered;
+  border-bottom: 1px solid rgb(94, 94, 94);
+}
+
+.navLink {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgb(16, 41, 62);
+  min-height: 100vh;
+}
+
+.navLink a {
+  color: rgb(223, 223, 223);
+   padding: .5rem .8rem;
+ 
+}

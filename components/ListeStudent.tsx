@@ -4,7 +4,7 @@ import {
   Key,
 } from "react";
 import toast , { Toaster }  from "react-hot-toast";
-import AddForm from "./AddForm";
+
 
 async function fetchData() {
   const response = await fetch("http://localhost:3000/api/contacts/", {
