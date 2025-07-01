@@ -1,0 +1,8 @@
+.teacher{
+    margin: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: rgba(245, 245, 245, 0.836);
+    text-transform: uppercase;
+    background-color: rgb(21, 163, 128);
+}

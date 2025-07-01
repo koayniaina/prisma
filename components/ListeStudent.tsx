@@ -1,4 +1,5 @@
 import RemoveBtn from "@/components/RemoveBtn";
+import styles from "@/styles/Teacher.module.css"
 import Link from "next/link";
 import {
   Key,
@@ -20,8 +21,8 @@ async function fetchData() {
 export default async function Home() {
   const contacts = await fetchData();
   return (
-    <div className="overflow-x-auto bg-base-100">
-      <Link href="/crud/addContact">Add Student</Link>
+    <div className="overflow-x-auto bg-base-100 p-4" >
+      <Link href="/crud/addContact" className={styles.teacher}>Add Student</Link>
       <Toaster position="top-right" />
       <table className="table">
         <thead>
@@ -56,7 +57,7 @@ export default async function Home() {
                   <td>{contact.address}</td>
                   <td>
                     <RemoveBtn id={contact.id} />
-                    <Link href={`Crud/editContact/${contact.id}`} className="text-blue-500 hover:underline">
+                    <Link href={`crud/editContact/${contact.id}`} className="text-blue-500 hover:underline">
                       <span className="material-symbols-outlined">edit</span>
                     </Link>
                   </td>

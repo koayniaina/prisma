@@ -1,2 +1,7 @@
 
 @import "tailwindcss";
+
+
+.table{
+    margin: 1rem;
+}
