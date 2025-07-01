@@ -13,6 +13,10 @@ pnpm dev
 # or
 bun dev
 ```
+.env DB
+<!--
+ DATABASE_URL="mongodb+srv://mydb:JP7KunTKJ80SJc5O@cluster0.qwbtgjq.mongodb.net/mycrud?retryWrites=true&w=majority&appName=Cluster0"
+ -->
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
