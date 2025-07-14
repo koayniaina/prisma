@@ -1,10 +1,10 @@
-import ListeStudent from "@/components/Student/ListeStudent";
+import ListForm from "@/components/Teacher/ListForm";
 import React from "react";
 
 export default function TeacherPage() {
   return (
     <div>
-      <ListeStudent />
+      <ListForm />
     </div>
   );
 }

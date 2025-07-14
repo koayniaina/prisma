@@ -8,7 +8,7 @@ import toast , { Toaster }  from "react-hot-toast";
 
 
 async function fetchData() {
-  const response = await fetch("http://localhost:3000/api/contacts/", {
+  const response = await fetch("http://localhost:3000/api/students/", {
     cache: "no-store",
   });
   if (!response.ok) {

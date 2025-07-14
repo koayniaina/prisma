@@ -34,7 +34,7 @@ export default function Sidebar() {
               <span className="material-symbols-outlined">person_book</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               href="/class"
               className="tooltip tooltip-right"
@@ -42,7 +42,7 @@ export default function Sidebar() {
             >
               <span className="material-symbols-outlined">apartment</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/student"
@@ -63,7 +63,7 @@ export default function Sidebar() {
               </span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               href="/grade"
               className="tooltip tooltip-right"
@@ -89,7 +89,7 @@ export default function Sidebar() {
             >
               <span className="material-symbols-outlined">topic</span>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
