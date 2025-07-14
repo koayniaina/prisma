@@ -1,4 +1,5 @@
-import AddForm from '@/components/AddForm'
+
+import AddForm from '@/components/Parent/AddForm'
 import React from 'react'
 
 

@@ -4,18 +4,18 @@ import { NextResponse } from "next/server";
 export const GET = async (_request: any, { params }: any) => {
   try {
     const { id } = params;
-    const contact = await prisma.contact.findUnique({
+    const student = await prisma.student.findUnique({
       where: {
         id,
       },
     });
-    if (!contact) {
+    if (!student) {
       return NextResponse.json(
-        { message: "Contact not found" },
+        { message: "Student not found" },
         { status: 404 }
       );
     }
-    return NextResponse.json(contact);
+    return NextResponse.json(student);
   } catch (error) {
     return NextResponse.json({ message: "GET Server Error" }, { status: 500 });
   }
@@ -28,10 +28,10 @@ export async function PUT(
     const { id } = params;
     const { newName: name, newEmail: email, newPhone: phone, newAddress: address } = await request.json();
 
-    await prisma.contact.update({
+    await prisma.student.update({
       where: { id },
       data: { name, email, phone, address },
     });
-    return NextResponse.json({ message: "Contact updated" }, { status: 200 });
+    return NextResponse.json({ message: "Student updated" }, { status: 200 });
 }
 

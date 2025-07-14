@@ -1,4 +1,4 @@
-import RemoveBtn from "@/components/RemoveBtn";
+import RemoveBtn from "@/components/Student/RemoveBtn";
 import styles from "@/styles/Teacher.module.css"
 import Link from "next/link";
 import {

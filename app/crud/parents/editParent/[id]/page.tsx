@@ -1,16 +1,15 @@
-// 'use client';
 
-import EditForms from "@/components/EditForms";
+import EditForm from "@/components/Parent/EditForm";
 
 
-const getContactById = async (id: string) => {
+const getParentById = async (id: string) => {
   try {
-        const res = await fetch(`http://localhost:3000/api/contacts/${id}`, {
+        const res = await fetch(`http://localhost:3000/api/parents/${id}`, {
             cache: "no-store",
         });
  
         if (!res.ok) {
-            throw new Error("Failed to fetch contact");
+            throw new Error("Failed to fetch parent");
         }
  
         return res.json();
@@ -24,10 +23,10 @@ interface PageProps {
   };
 }
 
-export default async function EditContactPage({ params }: PageProps) {
+export default async function EditParentPage({ params }: PageProps) {
   const { id } = params;
 
-  const contact = await getContactById(id);
+  const contact = await getParentById (id);
 
   if (!contact) {
     return <div>Failed to load contact.</div>;
@@ -37,7 +36,7 @@ export default async function EditContactPage({ params }: PageProps) {
 
   return (
     <div>
-      <EditForms
+      <EditForm
         id={id}
         name={name}
         phone={phone}

@@ -1,11 +1,10 @@
-import ListeStudent from '@/components/ListeStudent'
-import React from 'react'
+import ListeStudent from "@/components/Student/ListeStudent";
+import React from "react";
 
 export default function StudentPage() {
   return (
     <div>
-      <ListeStudent/>
+      <StudentList />
     </div>
-  )
+  );
 }
- 
