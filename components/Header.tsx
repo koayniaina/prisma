@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "@/styles/Header.module.css";
+// import styles from "@/styles/Header.module.css";
 
 export default function Header() {
   return (
-    <main className={styles.main}>
+    <main >
       <section>
-        <div className={styles.search}>
+        <div >
           <span className="material-symbols-outlined">search</span>
           <input type="search" placeholder="Search..." />
         </div>
       </section>
 
-      <section className={styles.container}>
+      <section >
         <span className="material-symbols-outlined">notifications_active</span>
         <span className="material-symbols-outlined">account_circle</span>
       </section>

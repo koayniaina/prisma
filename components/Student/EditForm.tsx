@@ -32,7 +32,7 @@ export default function EditForms({
     try {
   
       const res = await fetch(
-        `http://localhost:3000/api/contacts/${id}`,
+        `http://localhost:3000/api/students/${id}`,
         {
           method: "PUT",
           headers: {

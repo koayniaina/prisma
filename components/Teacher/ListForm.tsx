@@ -22,11 +22,11 @@ async function fetchData() {
 export default async function Home() {
   const contacts = await fetchData();
   return (
-    <div className="overflow-x-auto bg-base-100 p-4" >
-      <Link href="/crud/addContact" className={styles.teacher}>Add Teacher</Link>
+    <div  >
+      <Link href="/crud/teachers/addTeacher">Add Teacher</Link>
       <Toaster position="top-right" />
       <table className="table">
-        <thead>
+        {/* <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
@@ -34,7 +34,7 @@ export default async function Home() {
             <th>Address</th>
             <th>Actions</th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
           {contacts
             .filter(

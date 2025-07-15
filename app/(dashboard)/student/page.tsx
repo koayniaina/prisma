@@ -1,5 +1,4 @@
-import ListeStudent from "@/components/Student/ListeStudent";
-import ListForm from "@/components/Teacher/ListForm";
+import ListForm from "@/components/Student/ListForm";
 import React from "react";
 
 export default function StudentPage() {

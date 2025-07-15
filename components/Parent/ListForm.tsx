@@ -21,11 +21,11 @@ async function fetchData() {
 export default async function Home() {
   const contacts = await fetchData();
   return (
-    <div className="overflow-x-auto bg-base-100 p-4" >
-      <Link href="/crud/addContact" className={styles.teacher}>Add Parent</Link>
+    <div  >
+      <Link href="/crud/parents/addCRUD" >Add Parent</Link>
       <Toaster position="top-right" />
       <table className="table">
-        <thead>
+        {/* <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
@@ -33,7 +33,7 @@ export default async function Home() {
             <th>Address</th>
             <th>Actions</th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
           {contacts
             .filter(
@@ -57,7 +57,7 @@ export default async function Home() {
                   <td>{parent.address}</td>
                   <td>
                     <Remove id={parent.id} />
-                    <Link href={`crud/parents/editParent/${parent.id}`} className="text-blue-500 hover:underline">
+                    <Link href={`/crud/parents/editCRUD/${parent.id}`} className="text-blue-500 hover:underline">
                       <span className="material-symbols-outlined">edit</span>
                     </Link>
                   </td>

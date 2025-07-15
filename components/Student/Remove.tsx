@@ -3,17 +3,17 @@
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
  
-interface RemoveBtnProps {
+interface RemoveProps {
     id: string | number;
 }
 
-export default function RemoveBtn({ id }: RemoveBtnProps) {
+export default function RemoveBtn({ id }: RemoveProps) {
     const router = useRouter();
     const removeProduct= async () => {
         // const confirmed = confirm("Are you sure?");
  
         try {
-            const res = await fetch(`http://localhost:3000/api/contacts?id=${id}`, {
+            const res = await fetch(`http://localhost:3000/api/students?id=${id}`, {
                 method: "DELETE",
             });
  

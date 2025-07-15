@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/Homepage.module.css";
+// import styles from "@/styles/Homepage.module.css";
 // import Card from "@/components/Card";
 // import { Barchart } from "@/components/Barchart";
 // import { Piecharts } from "@/components/Piecharts";
@@ -7,7 +7,7 @@ import styles from "@/styles/Homepage.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.content}>
+    <div>
       <div className="contanaire">
         <div className="logo">
           <p className="p-2 ">Admin Dashboard</p>
